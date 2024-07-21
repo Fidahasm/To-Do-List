@@ -8,40 +8,47 @@
 </head>
 <body>
     <h1>To Do List</h1>
-    <div id="select">
-        <label for="week">Week:</label>
-        <select id="week" name="week">
-            <option value=""></option>
-            <option value="Week 1">Week 1</option>
-            <option value="Week 2">Week 2</option>
-            <option value="Week 3">Week 3</option>
-            <option value="Week 4">Week 4</option>
-        </select>
-        <br><br>
-        <label for="day">Day:</label>
-        <select name="day" id="day">
-            <option value=""></option>
-            <option value="Sunday">Sunday</option>
-            <option value="Monday">Monday</option>
-            <option value="Tuesday">Tuesday</option>
-            <option value="Wednesday">Wednesday</option>
-            <option value="Thursday">Thursday</option>
-            <option value="Friday">Friday</option>
-            <option value="Saturday">Saturday</option>
-        </select></div>
+    <div id="task-content">
+         <div id="select">
+            <label for="week">Week:</label>
+            <select id="week" name="week">
+                <option value=""></option>
+                <option value="Week 1">Week 1</option>
+                <option value="Week 2">Week 2</option>
+                <option value="Week 3">Week 3</option>
+                <option value="Week 4">Week 4</option>
+            </select>
+            <br><br>
+            <label for="day">Day:</label>
+            <select name="day" id="day">
+                <option value=""></option>
+                <option value="Sunday">Sunday</option>
+                <option value="Monday">Monday</option>
+                <option value="Tuesday">Tuesday</option>
+                <option value="Wednesday">Wednesday</option>
+                <option value="Thursday">Thursday</option>
+                <option value="Friday">Friday</option>
+                <option value="Saturday">Saturday</option>
+            </select>
+        </div>
+
         <br><br>
         <label for="">Add a Task:</label>
         <input type="text" id="task" placeholder="Add a task"><br><br>
+
         <div id="buttons">
-        <input type="button"  onclick="AddTask()" value="Add">
+            <input type="button"  onclick="AddTask()" value="Add">
+        </div>
+
     </div>
+
+    <div id="task-list">
         <h1 id="head1"></h1>
         <h2 id="head2"></h2>
-  
-
-    <div id="container">
-        <ul id="list">
-        </ul>
+        <ul id="list"></ul>
     </div>
+    
+    <div id="completed-lists"></div>
+
 </body>
 </html>

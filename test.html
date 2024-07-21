@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="test.js"></script>
+</head>
+<body>
+    <div id="task-input">
+        <select id="week-select">
+            <option value="Week 1">Week 1</option>
+            <option value="Week 2">Week 2</option>
+            <option value="Week 3">Week 3</option>
+            <option value="Week 4">Week 4</option>
+        </select>
+        <select id="day-select">
+            <option value="Monday">Monday</option>
+            <option value="Tuesday">Tuesday</option>
+            <option value="Wednesday">Wednesday</option>
+            <option value="Thursday">Thursday</option>
+            <option value="Friday">Friday</option>
+            <option value="Saturday">Saturday</option>
+            <option value="Sunday">Sunday</option>
+        </select>
+        <input type="text" id="task-input-field" placeholder="Enter your task">
+        <button id="add-task-btn"  onclick="addTask()">Add Task</button>
+    </div>
+    <div id="task-list">
+        <h1 id="week-header"></h1>
+        <h2 id="day-header"></h2>
+        <ul id="tasks"></ul>
+    </div>
+
+    <div id="completed-lists">
+        <!-- Completed task lists will be shown here -->
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

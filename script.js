@@ -8,12 +8,13 @@
         if( document.getElementById("task").value.length > 0 )
             {
                 
-                const taskItem=document.createElement('li');
+                const taskItem = document.createElement('li');
                 taskItem.textContent = taskContent
 
                 const dltbtn = document.createElement('button');
                 dltbtn.textContent = 'Delete';
-                dltbtn.addEventListener('click',() =>{
+                dltbtn.addEventListener('click',() =>
+                {
                     list.removeChild(taskItem);
                 });
                 taskItem.appendChild(dltbtn);
@@ -28,9 +29,9 @@
 
             
                 if(!document.getElementById('close')){
-                    const clsbtn=document.createElement('button');
+                    const clsbtn = document.createElement('button');
                     clsbtn.textContent='Close List';
-                    clsbtn.id="close";
+                    clsbtn.id = "close";
                     clsbtn.addEventListener('click',() =>
                     {
                          const weeks = document.getElementById('head1').textContent;
@@ -43,35 +44,29 @@
                         newDiv.innerHTML = `<h1>${weeks}</h1><h2>${days}</h2><ul>${taskContent}</ul>`;
                         document.getElementById('completed-lists').appendChild(newDiv);
 
-                        document.getElementById('head1').textContent = '';
-                        document.getElementById('head2').textContent = '';
-                        document.getElementById('list').innerHTML = '';
+                        document.getElementById('head1').textContent = ' ';
+                        document.getElementById('head2').textContent = ' ';
+                        document.getElementById('list').innerHTML = ' ';
 
                         const clsbtn = document.getElementById("close");
                         if(clsbtn){
                             clsbtn.remove();
                         }   
-                        document.getElementById('week').value='' ;
-                        document.getElementById('day').value = '' ;
+                        document.getElementById('week').value = ' ' ;
+                        document.getElementById('day').value = ' ' ;
                         document.getElementById("select").style.display = "inline";  
 
                     });
                     document.getElementById('task-content').appendChild(clsbtn);
-                    }
+                }
 
-                document.getElementById('task').value= '';
+                document.getElementById('task').value = ' ';
             }
             else{
 
                alert("Add a task!!");
 
             }
-        
-    }
-
-
-    function CloseList()
-    {
         
     }
 

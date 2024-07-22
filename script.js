@@ -4,8 +4,9 @@
  function AddTask()
     {
         var taskContent = document.getElementById('task').value;
+        var addedtask = document.getElementById('list');
 
-        if( document.getElementById("task").value.length > 0 )
+        if( document.getElementById("task").value.length > 0  )
             {
                 
                 const taskItem = document.createElement('li');
@@ -34,15 +35,39 @@
                     clsbtn.id = "close";
                     clsbtn.addEventListener('click',() =>
                     {
+                        const taskItems = document.getElementById('list').querySelectorAll('li');
                          const weeks = document.getElementById('head1').textContent;
                         const days = document.getElementById('head2').textContent;
-                        const taskContent = document.getElementById('list').innerHTML;
-
+                       // const taskContent = document.getElementById('list').innerHTML;
 
                         const newDiv=document.createElement('div');
                         newDiv.id="content";
-                        newDiv.innerHTML = `<h1>${weeks}</h1><h2>${days}</h2><ul>${taskContent}</ul>`;
+                        newDiv.innerHTML = `<h1>${weeks}</h1><h2>${days}</h2>`;
+                        const ul=document.createElement("ul");
+                        taskItems.forEach(item => {
+                            const li=document.createElement('li');
+                            li.textContent = item.firstChild.textContent;
+
+                            const dltbtn = document.createElement("button");
+                            dltbtn.textContent = "Delete";
+                            li.appendChild(dltbtn);
+                            dltbtn.addEventListener("click",() => {
+                                ul.removeChild(li);
+                                if (ul.children.length === 0){
+                                    newDiv.parentElement.removeChild(newDiv);
+                                }
+
+                            });
+                            ul.appendChild(li);
+                             
+
+                         });
+                         newDiv.appendChild(ul);
+                        
                         document.getElementById('completed-lists').appendChild(newDiv);
+
+                       
+                        
 
                         document.getElementById('head1').textContent = ' ';
                         document.getElementById('head2').textContent = ' ';

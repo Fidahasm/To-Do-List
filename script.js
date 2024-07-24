@@ -5,6 +5,7 @@
     {
         var taskContent = document.getElementById('task').value;
         var addedtask = document.getElementById('list');
+        var title = document.getElementById('title');
 
         if( document.getElementById("task").value.length > 0  )
             {

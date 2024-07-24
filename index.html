@@ -12,6 +12,8 @@
     <div id="input-container">
     <h1 id="main-head" style="font-size: 70px;font-style: italic;">To Do List</h1>
     <div id="task-content">
+        <label for="">Title:</label>
+        <input type="text" placeholder="title" id="title" style="width: 200px;">
          <div id="select">
             <label for="week">Week:</label>
             <select id="week" name="week">
@@ -36,7 +38,7 @@
 
         <br><br>
         <label for="">Tasks:</label>
-        <input type="text" id="task" placeholder="Add a task"><br><br>
+        <input type="text" id="task" placeholder="Add a task" style="width: 195px;"><br><br>
 
         <div id="buttons">
             <input type="button"  onclick="AddTask()" value="Add" >

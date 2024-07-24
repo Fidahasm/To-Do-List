@@ -4,10 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
     <script src="script.js" ></script>
 </head>
 <body>
-    <h1>To Do List</h1>
+    <div id="main-container">
+    <div id="input-container">
+    <h1 id="main-head" style="font-size: 70px;font-style: italic;">To Do List</h1>
     <div id="task-content">
          <div id="select">
             <label for="week">Week:</label>
@@ -18,7 +21,7 @@
                 <option value="Week 3">Week 3</option>
                 <option value="Week 4">Week 4</option>
             </select>
-            <br><br>
+            <!-- <br><br> -->
             <label for="day">Day:</label>
             <select name="day" id="day">
                 <option value=""></option>
@@ -33,14 +36,15 @@
         </div>
 
         <br><br>
-        <label for="">Add a Task:</label>
+        <label for="">Task   :</label>
         <input type="text" id="task" placeholder="Add a task"><br><br>
 
         <div id="buttons">
-            <input type="button"  onclick="AddTask()" value="Add">
+            <input type="button"  onclick="AddTask()" value="Add" >
         </div>
 
     </div>
+</div>
 
     <div id="task-list">
         <h1 id="head1"></h1>
@@ -49,6 +53,6 @@
     </div>
     
     <div id="completed-lists"></div>
-
+</div>
 </body>
 </html>

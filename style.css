@@ -1,0 +1,27 @@
+#main-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#input-container{
+    width: 460px;
+    height: 480px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    background-color: aqua;
+    font-style: italic;
+    border-radius: 20px;
+}
+#buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+}
+/* #main-head{
+    font-weight: 1000px;
+} */

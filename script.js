@@ -39,7 +39,8 @@
                          const weeks = document.getElementById('head1').textContent;
                         const days = document.getElementById('head2').textContent;
                        // const taskContent = document.getElementById('list').innerHTML;
-
+                        if(document.getElementById('list').children.length !== 0)
+                            {
                         const newDiv=document.createElement('div');
                         newDiv.id="content";
                         newDiv.innerHTML = `<h1>${weeks}</h1><h2>${days}</h2>`;
@@ -66,6 +67,8 @@
                         
                         document.getElementById('completed-lists').appendChild(newDiv);
 
+                        }
+                        
                        
                         
 

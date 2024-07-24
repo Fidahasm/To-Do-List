@@ -1,27 +1,64 @@
 #main-container{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 
 }
 
 #input-container{
-    width: 460px;
+    width: 500px;
     height: 480px;
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     align-items: center;
     background-color: aqua;
     font-style: italic;
     border-radius: 20px;
 }
+ #task-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+ }
 #buttons{
     display: flex;
     justify-content: center;
     align-items: center;
 
 }
-/* #main-head{
-    font-weight: 1000px;
-} */
+#task-head{
+    font-size: 50px;
+text-align: center;}
+
+#head1, #head2{
+    display: inline;
+    padding: 5px;
+    text-align: center;
+}
+#task-list{
+    width: 500px;
+    /* display: flex;
+    flex-direction: column;
+    align-items: center; */
+    background-color: gold;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+#content{
+    background-color: rgb(205, 36, 36);
+    width: 500px;
+    border-radius: 20px;
+    text-align: center;
+
+}
+.para{
+    display: inline;
+}
+#close{
+    display: inline-block;
+}
+#icon-id{
+    font-size: 20px;
+}

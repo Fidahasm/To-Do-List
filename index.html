@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="script.js" ></script>
 </head>
 <body>
@@ -12,9 +13,11 @@
     <div id="input-container">
     <h1 id="main-head" style="font-size: 70px;font-style: italic;">To Do List</h1>
     <div id="task-content">
+        <div id="select">
         <label for="">Title:</label>
         <input type="text" placeholder="title" id="title" style="width: 200px;">
-         <div id="select">
+        <br>
+       
             <label for="week">Week:</label>
             <select id="week" name="week">
                 <option value=""></option>
@@ -37,7 +40,7 @@
         </div>
 
         <br><br>
-        <label for="">Tasks:</label>
+        <label for="">Tasks</label>
         <input type="text" id="task" placeholder="Add a task" style="width: 195px;"><br><br>
 
         <div id="buttons">
@@ -48,12 +51,13 @@
 </div>
 
     <div id="task-list">
-        <h1 id="head1"></h1>
-        <h2 id="head2"></h2>
+        <h1 id="task-head"></h1>
+        <h3 id="head1"></h3>
+        <h3 id="head2"></h3>
         <ul id="list"></ul>
     </div>
     
-    <div id="completed-lists"></div>
+    <div id="completed-lists" "></div>
 </div>
 </body>
 </html>

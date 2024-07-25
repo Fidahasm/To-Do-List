@@ -13,8 +13,8 @@
                 const taskItem = document.createElement('li');
                 taskItem.textContent = taskContent
 
-                const dltbtn = document.createElement('button');
-                dltbtn.textContent = 'Delete';
+                const dltbtn = document.createElement('i');
+                dltbtn.className='bx bx-trash';              // dltbtn.textContent = 'Delete';
                 dltbtn.addEventListener('click',() =>
                 {
                     list.removeChild(taskItem);
@@ -47,17 +47,67 @@
 
                         const newDiv=document.createElement('div');
                         newDiv.id="content";
-                        newDiv.innerHTML = `<h1>${tl}</h1><p  class="para">${weeks}</p><p class="para">${days}</p><a href="" id="icon-id" ><i class='bx bx-right-top-arrow-circle' ></i><a>`;
+                        newDiv.innerHTML = `<h1>${tl}</h1><p  class="para">${weeks}</p><p class="para">${days}</p><div id="icon-id" ><i class='bx bx-down-arrow-circle' ></i></div><div id="up-arw"><i class='bx bx-up-arrow-circle' ></div>`;
 
+                        newDiv.querySelector('#icon-id').addEventListener("click",() => {
+
+                            // ul.style.display = ul.style.display === "none"? "block" : "none";
+                            if(ul.style.display = ul.style.display === "none"){
+                                ul.style.display = "block";
+                                document.getElementById('icon-id').style.display =  "none";
+                                document.getElementById('up-arw').style.display = "block";
+                            }
+                            else{
+                                ul.style.display = "none";
+                            }
+
+                        });
+                        newDiv.querySelector('#up-arw').addEventListener("click",() =>{
+
+                            // ul.style.display = ul.style.display === "none"? "block" : "none";
+                            if(ul.style.display = ul.style.display === "block"){
+                                ul.style.display = "none";
+                                document.getElementById('icon-id').style.display =  "block";
+                                document.getElementById('up-arw').style.display = "none";
+                               
+                            }
+                            else{
+                                ul.style.display = "block";
+                            }
+
+                        });
+                        
                         const ul=document.createElement("ul");
                         ul.id = "new-ul";
                         taskItems.forEach(item => {
                             const li=document.createElement('li');
                             li.textContent = item.firstChild.textContent;
-
-                            const dltbtn = document.createElement("button");
-                            dltbtn.textContent = "Delete";
+                            const dltbtn = document.createElement("i");
+                            dltbtn.className='bx bx-trash'; 
                             li.appendChild(dltbtn);
+                            const tick = document.createElement('i');
+                            tick.id = "icon-tick";
+                            tick.className='bx bx-checkbox-checked';
+                            li.appendChild(tick);
+                            tick.addEventListener("click",() =>
+                                {
+                                let cmpltlst = newDiv.querySelector("#cmpltlst");
+                                if(!cmpltlst)
+                                {
+                                const cmphead = document.createElement('h6');
+                                cmphead.textContent = "Completed Task List";
+                                newDiv.appendChild(cmphead);
+                                cmpltlst = document.createElement('ul');
+                                cmpltlst.id = "cmpltlst";
+                                newDiv.appendChild(cmpltlst);    
+                                }
+                                const newlist = document.createElement('li');
+                                newlist.textContent = li.firstChild.textContent;
+                                cmpltlst.appendChild(newlist);
+                                document.getElementById('new-ul').removeChild(li);
+
+
+                        });
                             dltbtn.addEventListener("click",() => {
                                 ul.removeChild(li);
                                 if (ul.children.length === 0){
@@ -75,7 +125,7 @@
                         document.getElementById('completed-lists').appendChild(newDiv);
                         document.getElementById('new-ul').style.display = "none";
 
-
+                            
                         // function ExtendDiv(){
                         //     document.getElementById('new-ul').style.display = "block";
 

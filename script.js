@@ -52,16 +52,16 @@ function AddTask()
                             // ul.style.display = ul.style.display === "none"? "block" : "none";
                             if(ul.style.display = ul.style.display === "none"){
                                 ul.style.display = "block";
-                                document.getElementById('icon-id').style.display =  "none";
-                                document.getElementById('up-arw').style.display = "block";
-                                document.getElementById('cmpltlst').style.display = "block";
-                                document.getElementById('cmphead').style.display = "block";
+                                newDiv.querySelector('.icon-id').style.display =  "none";
+                                newDiv.querySelector(".up-arw").style.display = "block";
+                                newDiv.querySelector('.cmpltlst').style.display = "block";
+                                newDiv.querySelector('.cmphead').style.display = "block";
 
                             }
                             else{
                                 ul.style.display = "none";
-                                document.getElementById('cmpltlst').style.display = "none";
-                                document.getElementById('cmphead').style.display = "none";
+                                newDiv.querySelector('.cmpltlst').style.display = "none";
+                                newDiv.querySelector('.cmphead').style.display = "none";
 
                             }
 
@@ -71,16 +71,16 @@ function AddTask()
                             // ul.style.display = ul.style.display === "none"? "block" : "none";
                             if(ul.style.display = ul.style.display === "block"){
                                 ul.style.display = "none";
-                                document.getElementById('icon-id').style.display =  "block";
-                                document.getElementById('up-arw').style.display = "none";
-                                document.getElementById('cmpltlst').style.display = "none";
-                                document.getElementById('cmphead').style.display = "none";
+                                newDiv.querySelector('.icon-id').style.display =  "block";
+                                newDiv.querySelector(".up-arw").style.display = "none";
+                                newDiv.querySelector('.cmpltlst').style.display = "none";
+                                newDiv.querySelector('.cmphead').style.display = "none";
                                
                             }
                             else{
                                 ul.style.display = "block";
-                                document.getElementById('cmpltlst').style.display = "block";
-                                document.getElementById('cmphead').style.display = "block";
+                                newDiv.querySelector('.cmpltlst').style.display = "block";
+                                newDiv.querySelector('.cmphead').style.display = "block";
 
                             }
 

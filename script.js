@@ -34,17 +34,19 @@ function AddTask()
                     clsbtn.id = "close";
                     clsbtn.addEventListener('click',() =>
                     {
-                        const taskItems = document.getElementById('list').querySelectorAll('li');
+                         const taskItems = document.querySelectorAll('#list li');
                          const weeks = document.getElementById('head1').textContent;
                         const days = document.getElementById('head2').textContent;
                         const tl = document.getElementById('task-head').textContent;
                        // const taskContent = document.getElementById('list').innerHTML;
-                        if(document.getElementById('list').children.length !== 0)
+                        if(taskItems.length !== 0)
                             {
 
                         const newDiv=document.createElement('div');
                         newDiv.classList.add("content");
-                        newDiv.innerHTML = `<h1>${tl}</h1><p  class="para">${weeks}</p><p class="para">${days}</p><div class="icon-id" ><i class='bx bx-down-arrow-circle' ></i></div><div class="up-arw"><i class='bx bx-up-arrow-circle' ></div>`;
+                        newDiv.innerHTML = `<h1>${tl}</h1><p  class="para">${weeks}</p><p class="para">${days}</p>
+                        <div class="icon-id" ><i class='bx bx-down-arrow-circle' ></i></div>
+                        <div class="up-arw"><i class='bx bx-up-arrow-circle' ></div>`;
                         newDiv.querySelector(".up-arw").style.display ="none";
 
                         newDiv.querySelector('.icon-id').addEventListener("click",() => {

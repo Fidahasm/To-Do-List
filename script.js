@@ -11,7 +11,7 @@ function AddTask()
                 taskItem.textContent = taskContent
 
                 const dltbtn = document.createElement('i');
-                dltbtn.className='bx bx-trash';              // dltbtn.textContent = 'Delete';
+                dltbtn.className='bx bx-trash';              
                 dltbtn.addEventListener('click',() =>
                 {
                     list.removeChild(taskItem);

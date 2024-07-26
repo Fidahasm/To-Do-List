@@ -1,7 +1,4 @@
- 
- 
- 
- function AddTask()
+function AddTask()
     {
         var taskContent = document.getElementById('task').value;
         var addedtask = document.getElementById('list');
@@ -46,19 +43,26 @@
                             {
 
                         const newDiv=document.createElement('div');
-                        newDiv.id="content";
-                        newDiv.innerHTML = `<h1>${tl}</h1><p  class="para">${weeks}</p><p class="para">${days}</p><div id="icon-id" ><i class='bx bx-down-arrow-circle' ></i></div><div id="up-arw"><i class='bx bx-up-arrow-circle' ></div>`;
+                        newDiv.classList.add("content");
+                        newDiv.innerHTML = `<h1>${tl}</h1><p  class="para">${weeks}</p><p class="para">${days}</p><div class="icon-id" ><i class='bx bx-down-arrow-circle' ></i></div><div class="up-arw"><i class='bx bx-up-arrow-circle' ></div>`;
+                        newDiv.querySelector(".up-arw").style.display ="none";
 
-                        newDiv.querySelector('#icon-id').addEventListener("click",() => {
+                        newDiv.querySelector('.icon-id').addEventListener("click",() => {
 
                             // ul.style.display = ul.style.display === "none"? "block" : "none";
                             if(ul.style.display = ul.style.display === "none"){
                                 ul.style.display = "block";
                                 document.getElementById('icon-id').style.display =  "none";
                                 document.getElementById('up-arw').style.display = "block";
+                                document.getElementById('cmpltlst').style.display = "block";
+                                document.getElementById('cmphead').style.display = "block";
+
                             }
                             else{
                                 ul.style.display = "none";
+                                document.getElementById('cmpltlst').style.display = "none";
+                                document.getElementById('cmphead').style.display = "none";
+
                             }
 
                         });
@@ -69,16 +73,21 @@
                                 ul.style.display = "none";
                                 document.getElementById('icon-id').style.display =  "block";
                                 document.getElementById('up-arw').style.display = "none";
+                                document.getElementById('cmpltlst').style.display = "none";
+                                document.getElementById('cmphead').style.display = "none";
                                
                             }
                             else{
                                 ul.style.display = "block";
+                                document.getElementById('cmpltlst').style.display = "block";
+                                document.getElementById('cmphead').style.display = "block";
+
                             }
 
                         });
                         
                         const ul=document.createElement("ul");
-                        ul.id = "new-ul";
+                        ul.classList.add("new-ul");
                         taskItems.forEach(item => {
                             const li=document.createElement('li');
                             li.textContent = item.firstChild.textContent;
@@ -91,14 +100,15 @@
                             li.appendChild(tick);
                             tick.addEventListener("click",() =>
                                 {
-                                let cmpltlst = newDiv.querySelector("#cmpltlst");
+                                let cmpltlst = newDiv.querySelector(".cmpltlst");
                                 if(!cmpltlst)
                                 {
                                 const cmphead = document.createElement('h6');
                                 cmphead.textContent = "Completed Task List";
+                                cmphead.classList.add("cmphead");
                                 newDiv.appendChild(cmphead);
                                 cmpltlst = document.createElement('ul');
-                                cmpltlst.id = "cmpltlst";
+                                cmpltlst.classList.add("cmpltlst");
                                 newDiv.appendChild(cmpltlst);    
                                 }
                                 const newlist = document.createElement('li');
@@ -110,29 +120,20 @@
                         });
                             dltbtn.addEventListener("click",() => {
                                 ul.removeChild(li);
-                                if (ul.children.length === 0){
+                                if (ul.children.length === 0 && !newDiv.querySelector('.cmpltlst'))
+                                    {
                                     newDiv.parentElement.removeChild(newDiv);
                                 }
 
                             });
                             ul.appendChild(li);
-                             
-
+        
                          });
                          
                          newDiv.appendChild(ul);
                         
                         document.getElementById('completed-lists').appendChild(newDiv);
                         document.getElementById('new-ul').style.display = "none";
-
-                            
-                        // function ExtendDiv(){
-                        //     document.getElementById('new-ul').style.display = "block";
-
-                        // }
-                        // document.getElementById('icon-id').onclick=ExtendDiv;
-                   
-
                         }
                         
                        
